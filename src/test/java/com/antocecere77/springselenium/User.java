@@ -1,9 +1,10 @@
 package com.antocecere77.springselenium;
 
-import lombok.Data;
+import lombok.Getter;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Data
+@Getter
 @Component
 public class User {
 
@@ -11,8 +12,13 @@ public class User {
 
     private Salary salary;
 
-    public User(Address address, Salary salary) {
+    @Autowired
+    public void setAddress(Address address) {
         this.address = address;
+    }
+
+    @Autowired
+    public void setSalary(Salary salary) {
         this.salary = salary;
     }
 
