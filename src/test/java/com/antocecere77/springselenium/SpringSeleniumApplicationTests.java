@@ -22,12 +22,17 @@ class SpringSeleniumApplicationTests {
 	@Value("${timeout}")
 	private Integer timeout;
 
+	@Value("${TEST_URL:https://www.google.com}")
+	private String testUrl;
+
 	@Test
 	void contextLoads() {
 		System.out.println(path);
 		System.out.println(fruits);
 		System.out.println(fruits.size());
 		System.out.println(timeout);
+		System.out.println(testUrl);
+
 		user.printDetails();
 	}
 
