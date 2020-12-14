@@ -1,11 +1,13 @@
 package com.antocecere77.springselenium;
 
+import com.github.javafaker.Faker;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
+import java.util.Locale;
 
 @SpringBootTest
 class SpringSeleniumApplicationTests {
@@ -25,6 +27,9 @@ class SpringSeleniumApplicationTests {
 	@Value("${TEST_URL:https://www.google.com}")
 	private String testUrl;
 
+	@Autowired
+	private Faker faker;
+
 	@Test
 	void contextLoads() {
 		System.out.println(path);
@@ -34,6 +39,7 @@ class SpringSeleniumApplicationTests {
 		System.out.println(testUrl);
 
 		user.printDetails();
+		System.out.println(faker.name().firstName());
 	}
 
 	//DI not Spring Boot way
