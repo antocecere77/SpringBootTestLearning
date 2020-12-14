@@ -30,6 +30,9 @@ class SpringSeleniumApplicationTests {
 	@Autowired
 	private Faker faker;
 
+	@Autowired
+	private Television tv;
+
 	@Test
 	void contextLoads() {
 		System.out.println(path);
@@ -40,6 +43,8 @@ class SpringSeleniumApplicationTests {
 
 		user.printDetails();
 		System.out.println(faker.name().firstName());
+
+		tv.playMovie();
 	}
 
 	//DI not Spring Boot way
