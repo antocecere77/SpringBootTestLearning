@@ -10,7 +10,7 @@ import javax.annotation.PostConstruct;
 public abstract class Base {
 
     @Autowired
-    private WebDriver driver;
+    protected WebDriver driver;
 
     @Autowired
     protected WebDriverWait wait;
